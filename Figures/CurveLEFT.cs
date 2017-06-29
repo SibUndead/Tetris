@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tetris.Figures
 {
-    class CurveLEFT : Figure
+    [Serializable]
+    public class CurveLEFT : Figure
     {
+        public CurveLEFT() { }
         public CurveLEFT(Tetris tetris) : base(tetris)
         {
             map = new int[sizeMap, sizeMap] { { 0, 1, 0, 0 },

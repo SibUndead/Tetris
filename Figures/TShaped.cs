@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tetris.Figures
 {
-    class TShaped : Figure
+    [Serializable]
+    public class TShaped : Figure
     {
+        public TShaped() { }
         public TShaped(Tetris tetris) : base(tetris)
         {
             map = new int[sizeMap, sizeMap] { { 1, 0, 0, 0 },

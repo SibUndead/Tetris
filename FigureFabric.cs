@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
+    //"Фабрика" фигур
     class FigureFabric
     {
         static Random rnd = new Random();
+        public static int type;
         public enum FiguresEnum 
         {
             AngleDOWN,
@@ -19,6 +21,7 @@ namespace Tetris
             Square,
             TShaped
         }
+        //Создать фигруру
         public static Figure MakeFigure(Tetris tetris, FiguresEnum figure)
         {
             switch(figure)
@@ -33,10 +36,12 @@ namespace Tetris
             }
             return null;
         }
+        //Создать случайную фигуру
         public static Figure MakeRandomFigure(Tetris tetris)
         {
             Array arr = Enum.GetValues(typeof(FiguresEnum));
-            return MakeFigure(tetris, (FiguresEnum)arr.GetValue(rnd.Next(0,arr.Length-1)));
+            type = rnd.Next(0, arr.Length);
+            return MakeFigure(tetris, (FiguresEnum)arr.GetValue(type));
         }
     }
 }

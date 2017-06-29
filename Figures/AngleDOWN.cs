@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tetris.Figures
 {
-    class AngleDOWN : Figure
+    [Serializable]
+    public class AngleDOWN : Figure
     {
+        public AngleDOWN() { }
         public AngleDOWN(Tetris tetris) : base(tetris)
         {
             map = new int[sizeMap, sizeMap] { { 0, 1, 0, 0 },

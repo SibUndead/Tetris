@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tao.OpenGl;
+using Tao.FreeGlut;
+using Tao.Platform.Windows;
 
 namespace Tetris
 {
@@ -12,16 +15,16 @@ namespace Tetris
     {
         static void Main(string[] args)
         {
-            Tetris Tetris = new Tetris(16, 18);
-            Tetris.generateFigure();
-            while (true)
-            {
-                Tetris.Step();
-                if (!Tetris.Endgame())
-                    break;
-                Tetris.ShowScreen();
-                Thread.Sleep(500);
-            }
+            Application.Run(new Menu());
+            //Tetris.generateFigure();
+            //while (true)
+            //{
+            //    Tetris.Step();
+            //    if (!Tetris.Endgame())
+            //        break;
+            //    Tetris.ShowScreen();
+            //Thread.Sleep(500);
+            //}
         }
     }
 }

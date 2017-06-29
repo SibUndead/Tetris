@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tetris.Figures
 {
-    class AngleUP : Figure
+    [Serializable]
+    public  class AngleUP : Figure
     {
+         public AngleUP()
+        { }
         public AngleUP(Tetris tetris) : base(tetris)
         {
             map = new int[sizeMap, sizeMap] { { 1, 0, 0, 0 },
